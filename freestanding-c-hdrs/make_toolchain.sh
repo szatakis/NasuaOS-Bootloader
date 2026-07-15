@@ -56,11 +56,11 @@ export MAKEFLAGS="-j$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || psri
 export PATH="$PREFIX/bin:$PATH"
 
 if [ ! -f binutils-$BINUTILSVERSION.tar.xz ]; then
-    curl -Lo binutils-$BINUTILSVERSION.tar.xz https://ftpmirror.gnu.org/gnu/binutils/binutils-$BINUTILSVERSION.tar.xz
+    curl -Lo binutils-$BINUTILSVERSION.tar.xz https://github.com/szatakis/NasuaOS-Bootloader/raw/main/toolchain/binutils-$BINUTILSVERSION.tar.xz
     b2sum binutils-$BINUTILSVERSION.tar.xz | grep -q 9f4fd8897d237eb5003bdf439537dfc5f8c681e9ff939fb06bb8235ed298031ea4cc91611edb640ffc432199d5791289d003fe0d07acce80327dc40595a5eb9e
 fi
 if [ ! -f gcc-$GCCVERSION.tar.xz ]; then
-    curl -Lo gcc-$GCCVERSION.tar.xz https://ftpmirror.gnu.org/gnu/gcc/gcc-$GCCVERSION/gcc-$GCCVERSION.tar.xz
+    curl -Lo gcc-$GCCVERSION.tar.xz https://github.com/szatakis/NasuaOS-Bootloader/raw/main/toolchain/gcc-$GCCVERSION.tar.xz
     b2sum gcc-$GCCVERSION.tar.xz | grep -q ceb07866b6b17eb4c69a6b51241b275bc5ec506603a7c1a4c1e2585091a09fc647be945beeff76700bffd9018bda81b072d84f909fd7998baa0cfe3f0eb550b4
 fi
 
